@@ -1,0 +1,11 @@
+git remote set-url origin https://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@github.com/IvanMella/NausicaaCrashCourse.git
+
+git status
+
+git add .
+
+git status
+
+git commit -m "commento breve"
+
+git push -u origin main

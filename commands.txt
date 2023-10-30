@@ -1,11 +1,19 @@
+Comando da eseguire una volta per poter modificare i file su git
 git remote set-url origin https://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@github.com/IvanMella/NausicaaCrashCourse.git
 
+
+Passaggi per inviare i file su git
+1. Controllo le modifiche effettuate
 git status
 
+2. Aggiungo le modifiche per inviarle al prossimo commit
 git add .
 
+3. Ricontrollo che il comando 2. abbia funzionato correttamente
 git status
 
+4. Faccio il commit delle modifiche aggiungendo un commento riassuntivo
 git commit -m "commento breve"
 
+5. Invio le modifiche su git
 git push -u origin main

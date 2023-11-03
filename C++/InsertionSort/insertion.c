@@ -12,7 +12,7 @@ void swap(char *, char *);
 int main()
 {
 	/* vettore da ordinare				*/
-	char v[] = "NAUSICAA";
+	char v[] = "IHGFEDCBA";
 
 	/* lunghezza del vettore			*/
 	int n = strlen(v);
@@ -48,6 +48,9 @@ void stampa(char *v, int n)
 };
 void InsertionSort( char *v, int n)
 {
+	/* Numero di macro operazioni effettuate			*/
+	int opCount = 0;
+
 	/* da 0 a questo indice son gia' ordinati			*/
 	int indOrd = 0;
 
@@ -57,6 +60,7 @@ void InsertionSort( char *v, int n)
 	/* Finche non ho scorruto tutto il vettore da Sx a Dx		*/
 	while (indOrd < n - 1)
 	{
+		opCount ++;
 		stampa(v,n);
 		cout << "currEl:" << currEl << ", Swap:";
 		/* Se  l'elemento  corrente  e'  piu  piccolo  del  suo	*
@@ -64,6 +68,7 @@ void InsertionSort( char *v, int n)
 		 * vettore da dx a sx...   Swappolo!			*/
 		while (v[currEl] < v[currEl - 1] && currEl > 0)
 		{
+			opCount ++;
 			cout << " | " << currEl << " <-> " << currEl - 1;
 
 			swap(v[currEl], v[currEl - 1]);
@@ -80,6 +85,7 @@ void InsertionSort( char *v, int n)
 		/* L'elemento corrente e' sempre 1 a dx di indOrd	*/
 		currEl = indOrd + 1;
 	}
+	cout << "Operazioni effettuate:" << opCount << endl;
 }
 
 void swap(char *s, char *d)

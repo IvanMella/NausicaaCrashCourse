@@ -1,14 +1,1 @@
-
-1. Accedi alla cartella .git:
-	cd NausicaaCrashCourse/.git
-
-2. Modifica il file config:
-	nano config
-
-3. In [remote "origin"] sostituisci l'url precedente con: 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
-
-4. Esci: CTRL + X
-
-5. Salva: Y
-
-6. Conferma: ENTER
+git remote set-url origin https://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@github.com/IvanMella/Elia.git

@@ -86,11 +86,12 @@ void mergeSort(int arr[],int l,int r)
 	}
 }
 
-/* argc-> argument  counter,  e'  il numero degli argomenti compreso il	*
-* nome del programma, argv (** perche e' un puntatore a puntatore)  il	*
-* secindo puntatore e' quello che mi permette di eggere tutto il  nome	*
-* che sto puntando.(non serve a nulla perche non viene trattato)	*
-* int main(int argc, char** argv)					*/
+/* argc->  argument   counter,  e'  il  numero degli  argomenti	*
+ * compreso  il  nome  del   programma,  argv (** perche e'  un	*
+ * puntatore a puntatore)  il secondo puntatore  e' quello  che	*
+ * mi permette di leggere tutto  il   nome  che  sto  puntando.	*
+ * (non serve a nulla perche non viene trattato)		*
+ * int main(int argc, char** argv)				*/
 int main()
 {
 

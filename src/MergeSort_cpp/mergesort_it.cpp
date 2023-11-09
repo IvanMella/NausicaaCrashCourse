@@ -88,7 +88,7 @@ void mergeIt(int *array,int size)
 	cout << "Run " << run << " ";
 	stampaVettore("Passaggio: ", array, size);
 
-	run *= 2;
+	run *= 2 + 1;
 	int begin = 0;
 	int end = run - 1;
 	}

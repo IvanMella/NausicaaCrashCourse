@@ -27,16 +27,16 @@ int swapMerge = 0;
 int main()
 {
 
-	const int n = 9;
+	const int n = 4;
 	int v[n];
 
 	riempiVettore(v,n);
 
 	stampaVettore("Vettore di Partenza: ",v,n);
 
-	mergeSort(v,0,n-1);
+	mergeSort(v, 0, n - 1);
 
-	cout<<"MergeSort: "<<swapMerge<<" scambi"<<endl;
+	cout << "MergeSort: " << swapMerge << " scambi" << endl;
 
 	stampaVettore("Ordinamento di tipo MergeSort: ", v, n);
 
@@ -76,33 +76,41 @@ void stampaVettore(string message, int * array, int size)
 
 void merge(int * array, int left, int mid, int right)
 {
-	int i = 0, j = 0, k;
+	int i = 0;
 	int sizL = mid - left + 1;
 	int sizR = right - mid;
 
+	cout << "left: " << left << " mid: " << mid
+	<< " right: " << right<< " sizL: " << sizL
+	<< " sizR: " << sizR << endl;
 	/* Brutto. allocazione dinamica della memoria sullo stack. Non 	*
 	 * funzionera' per grandi numeri'				*/
-	int runL[sizL], runR[sizR];
+		//int runL[sizL], runR[sizR];
 
-	/* copia il vettore nei due vettori di appoggio			*/
+	/* Meglio, (la keyword auto deduce il tipo di dato dal R-value	*
+	 * in questo caso int)						*/
+	auto	*runL = new int[sizL],
+		*runR = new int[sizR];
 
+	/* Copia il vettore nei due vettori di appoggio	in modo		*
+	 * efficiente e pulito						*/
+	for (i = 0; i < sizR; i++)
+	{
+		runL[i] = array[i + left];
+		runR[i] = array[i + mid + 1];
+	}
+	/* Se right - left e' pari manca l'ultimo valore da copiare	*/
+	if ((right - left) % 2 == 0)
+		runL[i] = array[mid];
 
-	for (int i = left; i < mid; i++)
-		runL[i - left] = array[i];
-		runR[i - left] = array[i + mid];
+	stampaVettore("runL: ", runL, sizL);
+	stampaVettore("runR: ", runR, sizR);
 
-	for (int i = mid; i < right; i++)
-		runR[i - mid] = array[i];
+	i = 0;
+	int j = 0;
+	int k = left;
 
-
-	for (int i = 0; i < sizL; i++)
-		runL[i] = array[left + i];
-
-	for (int i = 0; i < sizR; i++)
-		runR[i] = array[mid + 1 + i];
-
-	k = left;
-
+	/* Riporta i dati nel vettore array (da sinistra a destra)	*/
 	while(i < sizL && j < sizR)
 	{
 		if(runL[i] <= runR[j])
@@ -120,6 +128,7 @@ void merge(int * array, int left, int mid, int right)
 		k++;
 	}
 
+	/* Se ce ne sono, copia gli elementi restanti di sinistra	*/
 	while(i < sizL)
 	{
 		array[k] = runL[i];
@@ -128,6 +137,7 @@ void merge(int * array, int left, int mid, int right)
 		k++;
 	}
 
+	/* Se ce ne sono, copia gli elementi restanti di destra		*/
 	while(j < sizR)
 	{
 		array[k] = runR[j];
@@ -135,6 +145,10 @@ void merge(int * array, int left, int mid, int right)
 		j++;
 		k++;
 	}
+
+	/* dealloca la memoria						*/
+	delete runL;
+	delete runR;
 }
 
 void mergeSort(int * array,int left, int right)

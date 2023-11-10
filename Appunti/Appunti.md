@@ -147,6 +147,44 @@ utilizzando il comando:
 si ottiene la cancellazione di tutti i file .o e degli eseguibili.
 
 
+## i softwares di gestione e revisone del codice.
+
+### git
+
+Git è un software per il controllo di versione distribuito utilizzabile da interfaccia a riga di comando, creato da Linus Torvalds nel 2005.
+
+Git (che nello slang britannico significa idiota) nacque per essere un semplice strumento per facilitare lo sviluppo del kernel Linux ed è diventato uno degli strumenti di controllo versione più diffusi. La sua progettazione si ispirò ad analoghi strumenti, allora proprietari, come BitKeeper e Monotone.
+
+[Maggiori informazioni su git] (https://it.wikipedia.org/wiki/Git_\(software\))
+
+### Github
+GitHub è un servizio di hosting per progetti software, di proprietà della società GitHub Inc., con sede legale a San Francisco in California.
+
+Il nome deriva dal fatto che "GitHub" è una implementazione dello strumento di controllo versione distribuito Git. Tra i molti soggetti che offrono servizi a livello internazionale che usano GitHub, le principali sono Google, Apple, Microsoft, NASA, Facebook, Twitter, Node.js, Ruby on Rails, JetBrains, JQuery, e GitHub stesso.
+
+### Come si usa
+
+Il Corso NausicaaCrashCourse e' strutturato con git. qui di seguito un breve memo dei comandi di piu frequente utilizzo in fase di sviluppo software.
+
+git e' inizializzato nella cartella ~/Documents/NausicaCrashCourse, quindi in quella cartella vanno invocati tutti i comandi di git.
+
+	/> git pull origin main
+*sincronizza il repository del progetto scaricando i dati da GitHub*
+
+	/> git add .
+*Fa lo stage di tutti i files modificati:*
+
+	/>git commit -m "commento sulle modifiche apportate"
+*"Affida" (commit) i sorgenti a git. questi vengono salvati in modo incrementale da git cosi' da preservare uno storico e facilitare la revisione del software*
+
+	/>git push -u origin main
+*Sincronizza il repository del progetto caricando i dati su GitHub*
+
+	/>git status
+*Mostra lo stato dei files (modificati, in staging, cancellati..)
+
+	/>git log
+*Mostra la cronologa di tutti i commit del progetto*
 
 
 

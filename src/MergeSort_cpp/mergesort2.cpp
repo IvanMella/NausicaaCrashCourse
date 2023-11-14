@@ -153,13 +153,11 @@ void merge(int * array, int left, int mid, int right)
 
 void mergeSort(int * array,int left, int right)
 {
-	if (left < right)
-	{
+	if (left >= right) return;
 
-		int mid = (left + right) / 2;
+	int mid = (left + right) / 2;
 
-		mergeSort(array, left, mid);
-		mergeSort(array, mid + 1, right);
-		merge(array, left, mid, right);
-	}
+	mergeSort(array, left, mid);
+	mergeSort(array, mid + 1, right);
+	merge(array, left, mid, right);
 }

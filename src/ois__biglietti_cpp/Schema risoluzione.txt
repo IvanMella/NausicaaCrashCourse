@@ -7,6 +7,8 @@
    ciascuno (N*A)
 7. calcolo quanti centesimi spende comprando X carnet  per coprire N viaggi
    (X*B)
-8. trovo il minimo tra questi due risultati
-9. lo confronto con il valore della risposta
+8. calcolo quanti carnet(M)+ quanti biglietti mi servono per coprire in maniera
+   esatta N e ne calcolo il costo
+9. trovo il minimo tra questi tre risultati
+10. lo confronto con il valore della risposta
 

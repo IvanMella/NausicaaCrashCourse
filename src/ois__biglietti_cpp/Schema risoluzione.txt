@@ -1,0 +1,12 @@
+1. prendo i valori di M,N,A,B dal file
+2. li inserisco in un vettore/in singole variabili
+3. prendo il risultato dal secondo file di testo
+4. lo inserisco in una variabile
+5. capisco quante M (carnet) mi servono per coprire le N(corse)
+6. calcolo quanti centesimi spende per fare N viaggi comprando un biglietto per
+   ciascuno (N*A)
+7. calcolo quanti centesimi spende comprando X carnet  per coprire N viaggi
+   (X*B)
+8. trovo il minimo tra questi due risultati
+9. lo confronto con il valore della risposta
+

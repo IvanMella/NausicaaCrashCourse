@@ -12,8 +12,9 @@ using namespace std;
 void riempiVettore(int * array,int size);
 void stampaVettore(string message, int * array, int size);
 
-void mergeSort(int * array, int left,int right);
-void merge(int * array, int left, int middle, int right);
+void mergeSort(int * array, int left, int right, int depth);
+void merge(int * array, int left, int middle, int right, int depth);
+
 
 /* Variabili globali						*/
 int swapMerge = 0;
@@ -27,6 +28,7 @@ int swapMerge = 0;
 int main()
 {
 
+
 	const int n = 4;
 	int v[n];
 
@@ -34,7 +36,7 @@ int main()
 
 	stampaVettore("Vettore di Partenza: ",v,n);
 
-	mergeSort(v, 0, n - 1);
+	mergeSort(v, 0, n - 1, 0);
 
 	cout << "MergeSort: " << swapMerge << " scambi" << endl;
 
@@ -74,7 +76,7 @@ void stampaVettore(string message, int * array, int size)
 	cout << endl;
 }
 
-void merge(int * array, int left, int mid, int right)
+void merge(int * array, int left, int mid, int right, int depth)
 {
 	int i = 0;
 	int sizL = mid - left + 1;
@@ -83,6 +85,9 @@ void merge(int * array, int left, int mid, int right)
 	cout << "left: " << left << " mid: " << mid
 	<< " right: " << right<< " sizL: " << sizL
 	<< " sizR: " << sizR << endl;
+
+	cout << string(depth, '\t') << "merge" << endl;
+
 	/* Brutto. allocazione dinamica della memoria sullo stack. Non 	*
 	 * funzionera' per grandi numeri'				*/
 		//int runL[sizL], runR[sizR];
@@ -147,17 +152,30 @@ void merge(int * array, int left, int mid, int right)
 	}
 
 	/* dealloca la memoria						*/
-	delete runL;
-	delete runR;
+	delete[] runL;
+	delete[] runR;
 }
 
-void mergeSort(int * array,int left, int right)
+void mergeSort(int * array, int left, int right, int depth)
 {
-	if (left >= right) return;
 
-	int mid = (left + right) / 2;
+    if (left >= right) {
+        cout << string(depth, '\t') << "mergesort " << left
+        << " di 1 elemento" << endl;
+        return;
+    }
 
-	mergeSort(array, left, mid);
-	mergeSort(array, mid + 1, right);
-	merge(array, left, mid, right);
+    int mid = (left + right) / 2;
+    cout << string(depth, '\t') << "mergesort a sinistra di " << mid - left + 1
+    << " elementi" << endl;
+    mergeSort(array, left, mid, depth + 1);
+
+    cout << string(depth, '\t') << "mergesort a destra di " << right - mid
+    << " elementi" << endl;
+    mergeSort(array, mid + 1, right, depth + 1);
+
+    merge(array, left, mid, right, depth);
 }
+
+//In questo modo, ho aggiunto un parametro depth alle funzioni mergeSort e
+//per tener traccia della profondità della chiamata ricorsiva.

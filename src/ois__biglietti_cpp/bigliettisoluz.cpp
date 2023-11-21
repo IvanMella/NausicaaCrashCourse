@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <fstream>//libreria dei file
 
 using namespace std;
 
@@ -29,11 +29,39 @@ int main() {
 
     cout<< "il risultato corretto e: " << risultato <<endl;
 
-    int X=B;
+    int X=0;
+    int Z=M;
     while ( N > M)
 	{
-	    X=X+B;
+	    X++;
+	    M=M+Z;
 	}
 
-    return 0; // Uscita senza errori
+
+
+    int cost1 = N * A;
+    int cost2 = X * B;
+    int cost3 =0;
+
+    int minimo = cost1;
+
+    if (cost2 < minimo) {
+        minimo = cost2;
+    } else if (cost3 < minimo) {
+        minimo = cost3;
+    }
+
+    cout << "il tuo risultato e' : " << minimo << endl;
+
+    if(minimo==risultato)
+	{
+	    cout << "il tuo risultato e'corretto" <<endl;
+	}
+    else
+	{
+	    cout<< "hai sbagliato, il risultato corretto era : " << risultato
+	    << endl;
+	}
+
+    return 0;
 }

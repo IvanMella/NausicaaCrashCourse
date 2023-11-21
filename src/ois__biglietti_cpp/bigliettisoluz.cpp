@@ -45,9 +45,12 @@ int main() {
 
     int minimo = cost1;
 
-    if (cost2 < minimo) {
+    if (cost2 < minimo)
+    {
         minimo = cost2;
-    } else if (cost3 < minimo) {
+    }
+    else if(cost3 < minimo)
+    {
         minimo = cost3;
     }
 

@@ -29,7 +29,7 @@ int main()
 {
 
 
-	const int n = 4;
+	const int n = 14;
 	int v[n];
 
 	riempiVettore(v,n);
@@ -82,9 +82,9 @@ void merge(int * array, int left, int mid, int right, int depth)
 	int sizL = mid - left + 1;
 	int sizR = right - mid;
 
-	cout << "left: " << left << " mid: " << mid
-	<< " right: " << right<< " sizL: " << sizL
-	<< " sizR: " << sizR << endl;
+	// cout << "left: " << left << " mid: " << mid
+	// << " right: " << right<< " sizL: " << sizL
+	// << " sizR: " << sizR << endl;
 
 	cout << string(depth, '\t') << "merge" << endl;
 
@@ -108,8 +108,8 @@ void merge(int * array, int left, int mid, int right, int depth)
 	if ((right - left) % 2 == 0)
 		runL[i] = array[mid];
 
-	stampaVettore("runL: ", runL, sizL);
-	stampaVettore("runR: ", runR, sizR);
+	// stampaVettore("runL: ", runL, sizL);
+	// stampaVettore("runR: ", runR, sizR);
 
 	i = 0;
 	int j = 0;

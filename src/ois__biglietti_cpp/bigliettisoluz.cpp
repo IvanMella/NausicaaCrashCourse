@@ -24,7 +24,7 @@ int main() {
     int risultato;
 
     ifstream inputFile2("output.txt");
-    inputFile >> risultato;
+    inputFile2 >> risultato;
     inputFile2.close();
 
     cout<< "il risultato corretto e: " << risultato <<endl;

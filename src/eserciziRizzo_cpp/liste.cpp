@@ -39,13 +39,15 @@ void ranDispari (int *v, int size)
 	srand(time(NULL));
 	int r;
 	for(int i = 0; i < size; i++)
-	{
-		r=rand() % 101;
-		if(r % 2)
-			v[i] = r;
-		else
-			v[i] = r + 1;
-	}
+		// Fa l'OR logico con 1.
+		v[i] = rand() % 101 | 1;
+	// {					-|
+	// 	r=rand() % 101;			 |
+	// 	if(r % 2)			 |
+	// 		v[i] = r;		 |-  LOL :-)
+	// 	else				 |
+	// 		v[i] = r + 1;		 |
+	// }					_|
 
 }
 void stampaVettore( string msg ,int *arr, int size)

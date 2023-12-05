@@ -1,12 +1,12 @@
-1. prendo i valori di M,N,A,B dal file
-2. li inserisco in un vettore/in singole variabili
-3. prendo il risultato dal secondo file di testo
-4. lo inserisco in una variabile
-5. capisco quante M (carnet) mi servono per coprire le N(corse)
+1. prendo i valori di M,N,A,B dal file x
+2. li inserisco in un vettore/in singole variabili x
+3. prendo il risultato dal secondo file di testo x
+4. lo inserisco in una variabile x
+5. capisco quante M (carnet) mi servono per coprire le N(corse) x
 6. calcolo quanti centesimi spende per fare N viaggi comprando un biglietto per
-   ciascuno (N*A)
+   ciascuno (N*A) x
 7. calcolo quanti centesimi spende comprando X carnet  per coprire N viaggi
-   (X*B)
+   (X*B) x
 8. calcolo quanti carnet(M)+ quanti biglietti mi servono per coprire in maniera
    esatta N e ne calcolo il costo
 9. trovo il minimo tra questi tre risultati
